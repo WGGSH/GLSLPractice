@@ -14,6 +14,7 @@ class GLSL002 extends GLSL{
 	void draw(){
 		background(0);
 		this.shader.set("r",float(width),float(height));
+		this.shader.set("mouse",float(mouseX),float(mouseY));
 		this.shader.set("t",float(frameCount));
 
 		shader(this.shader);
