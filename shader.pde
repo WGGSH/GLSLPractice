@@ -14,7 +14,7 @@ class GLSL{
 void setup(){
 	//size(displayWidth,displayHeight,P3D);
 	fullScreen(P3D);
-	glsl=new GLSL002();
+	glsl=new GLSL003();
 	glsl.setup();
 }
 
