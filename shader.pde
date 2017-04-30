@@ -1,4 +1,8 @@
+import peasy.*;
+PeasyCam cam;
+
 GLSL glsl;
+
 
 class GLSL{
 	GLSL(){
@@ -14,8 +18,13 @@ class GLSL{
 void setup(){
 	//size(displayWidth,displayHeight,P3D);
 	fullScreen(P3D);
-	glsl=new GLSL004();
+	glsl=new GLSL005();
 	glsl.setup();
+
+
+	/*cam = new PeasyCam(this, 100);
+	cam.setMinimumDistance(50);
+	cam.setMaximumDistance(500);*/
 }
 
 void draw(){
