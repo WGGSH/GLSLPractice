@@ -22,8 +22,8 @@ vec3 HSVtoRGB( vec3 hsv )
 void main(){
 	vec2 p = (gl_FragCoord.xy * 2.0 - r) / min(r.x, r.y); // 正規化
 	float val=0.5;
-	float alpha;
-	if(abs(p.x)<0.6 && abs(p.y)<0.6){
+	float alpha=1;
+	/*if(abs(p.x)<0.6 && abs(p.y)<0.6){
 		alpha=0;
 	}else{
 		if(abs(p.x)>abs(p.y)){
@@ -32,8 +32,10 @@ void main(){
 			val=(p.y*p.y-0.35)/0.36;
 		}
 		alpha=1;
-	}
+	}*/
+	val=0.0003/(abs(p.x*p.y));
+	//if(val<0.1)val=0;
 	//gl_FragColor=vec4(vec3((p.x+1)/2,(p.y+1)/2,1),1);
-	gl_FragColor=vec4(HSVtoRGB(vec3(0.7+0.1*sin(t),0.5+0.3*cos(t*t/10),val)),alpha);
+	gl_FragColor=vec4(HSVtoRGB(vec3(0.7+0.1*sin(t),0.5,val)),alpha);
 }
 

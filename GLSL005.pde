@@ -17,6 +17,7 @@ class GLSL005 extends GLSL{
 	void draw(){
 		//hint(DISABLE_DEPTH_TEST);
 		hint(ENABLE_DEPTH_SORT);
+		hint(DISABLE_DEPTH_TEST);
 
 		background(0);
 		this.shader.set("r",float(pg.width),float(pg.height));
@@ -30,10 +31,14 @@ class GLSL005 extends GLSL{
 
 		blendMode(ADD);
 		final float SIZE=200;
-
 		translate(width/2,height/2);
 		rotateX(PI/180*frameCount/4);
 		rotateY(PI/180*frameCount*2/4);
+		for(int j=0;j<3;j++){
+			rotateY(PI*2/3);
+			pushMatrix();
+		for(int i=0;i<3;i++){
+			rotateX(PI*2/3);
 
 		noStroke();
 
@@ -84,6 +89,9 @@ class GLSL005 extends GLSL{
 		vertex(SIZE,SIZE,SIZE,pg.width,pg.height);
 		vertex(-SIZE,SIZE,SIZE,0,pg.height);
 		endShape(CLOSE);
+		}
+		popMatrix();
+		}
 
 		//shader(this.shader);
 		//fill(255);
