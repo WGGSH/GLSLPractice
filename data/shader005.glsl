@@ -33,9 +33,10 @@ void main(){
 		}
 		alpha=1;
 	}*/
-	val=0.0003/(abs(p.x*p.y));
+	val=(0.003)/abs((1-abs(p.x))*(1-abs(p.y)))*((sin(t)+1.004)/2);
+	//val+=(0.03)/(abs((p.x-1)*(p.y-1))*(sin(t)+1.04)/2);
 	//if(val<0.1)val=0;
 	//gl_FragColor=vec4(vec3((p.x+1)/2,(p.y+1)/2,1),1);
-	gl_FragColor=vec4(HSVtoRGB(vec3(0.7+0.1*sin(t),0.5,val)),alpha);
+	gl_FragColor=vec4(HSVtoRGB(vec3(0.5+0.5*sin(t*5),0.8,val)),alpha);
 }
 
