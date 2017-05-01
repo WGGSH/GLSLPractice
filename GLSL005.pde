@@ -30,7 +30,7 @@ class GLSL005 extends GLSL{
 		pg.endDraw();
 
 		blendMode(ADD);
-		final float SIZE=200;
+		final float SIZE=1200;
 		translate(width/2,height/2);
 		rotateX(PI/180*frameCount/4);
 		rotateY(PI/180*frameCount*2/4);
